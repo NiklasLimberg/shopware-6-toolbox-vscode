@@ -10,14 +10,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:shopware6-vscode-extension.searchChangelog"
+    "onCommand:shopware6-vscode-extension.getChangelogInBranch",
+    "onCommand:shopware6-vscode-extension.searchForChangelog"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "shopware6-vscode-extension.searchChangelog",
+        "command": "shopware6-vscode-extension.searchForChangelog",
         "title": "Search Changelog"
+      }, {
+        "command": "shopware6-vscode-extension.getChangelogInBranch",
+        "title": "Get Changelog in Branch"
       }
     ]
   },
