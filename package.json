@@ -1,6 +1,6 @@
 {
-  "name": "shopware6-vscode-extension",
-  "displayName": "shopware6-vscode-extension",
+  "name": "shopware-6-toolbox",
+  "displayName": "Shopware 6 Toolbox",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,17 +10,17 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:shopware6-vscode-extension.getChangelogInBranch",
-    "onCommand:shopware6-vscode-extension.searchForChangelog"
+    "onCommand:shopware-6-toolbox.getChangelogInBranch",
+    "onCommand:shopware-6-toolbox.searchForChangelog"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "shopware6-vscode-extension.searchForChangelog",
+        "command": "shopware-6-toolbox.searchForChangelog",
         "title": "Search Changelog"
       }, {
-        "command": "shopware6-vscode-extension.getChangelogInBranch",
+        "command": "shopware-6-toolbox.getChangelogInBranch",
         "title": "Get Changelog in Branch"
       }
     ]
