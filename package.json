@@ -19,15 +19,40 @@
       {
         "command": "shopware-6-toolbox.searchForChangelog",
         "title": "Search Changelog"
-      }, {
+      },
+      {
         "command": "shopware-6-toolbox.getChangelogInBranch",
         "title": "Get Changelog in Branch"
+      },
+      {
+        "command": "shopware-6-toolbox.createPr",
+        "title": "Creates a PR with a commit, a branch and a changelog"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Shopware 6 Toolbox",
+      "properties": {
+        "shopware-6-toolbox.changelog.author": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "The author used when creating changelogs"
+        },
+        "shopware-6-toolbox.changelog.authorEmail": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "The author-email used when creating changelogs"
+        },
+        "shopware-6-toolbox.changelog.authorGithub": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "The github tag used when creating changelogs"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run -S esbuild-base -- --minify",
-    "esbuild-base": "rimraf out && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild-base": "rimraf out && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --main-fields=module,main",
     "build": "npm run -S esbuild-base -- --sourcemap",
     "watch": "npm run -S esbuild-base -- --sourcemap --watch",
     "lint:fix": "npm run test -- --fix",
@@ -45,6 +70,7 @@
     "eslint": "^8.28.0",
     "glob": "^8.0.3",
     "mocha": "^10.1.0",
+    "jsonc-parser": "^3.2.0",
     "typescript": "^4.9.3"
   }
 }
